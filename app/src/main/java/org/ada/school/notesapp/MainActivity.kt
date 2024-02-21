@@ -55,7 +55,7 @@ class MainActivity : AppCompatActivity() {
             val text = editText.text.toString()
             editText.text.clear()
             val color = spinner.selectedItem.toString()
-            val note = Note(null, text, color)
+            val note = Note(text, color)
             GlobalScope.launch {
                 noteDao.insertAll(note)
                 loadNotes()
